@@ -4,9 +4,8 @@ describe("ryze tests", function () {
   it("signin test", function () {
     browser.get("https://ryze-staging.formedix.com/sign-in");
 
-    element(by.id("username")).sendKeys("testteamtechtest");
-    element(by.id("password")).sendKeys("T3st3rT3ch");
-    element(by.id("btnSubmit")).click();
+    login();
+
     element(by.id("menuMdb")).click();
     element(by.id("menuMdbStudies")).click();
     element(
@@ -30,9 +29,20 @@ describe("ryze tests", function () {
     // element(by.xpath("(//div[@id='editPropsAddEntrydescription'])[1]")).click();
     element(by.id("saveAsset")).click();
     browser.sleep(1000);
-    element(by.id("menuUser")).click();
-    element(by.id("menuUserLogout")).click();
+
+    logout();
 
     browser.sleep(1000);
   });
 });
+
+function login() {
+  element(by.id("username")).sendKeys("testteamtechtest");
+  element(by.id("password")).sendKeys("T3st3rT3ch");
+  element(by.id("btnSubmit")).click();
+}
+
+function logout() {
+  element(by.id("menuUser")).click();
+  element(by.id("menuUserLogout")).click();
+}
