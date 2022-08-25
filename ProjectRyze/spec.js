@@ -29,6 +29,9 @@ describe("ryze tests", function () {
     ).click();
     // element(by.xpath("(//div[@id='editPropsAddEntrydescription'])[1]")).click();
     element(by.id("saveAsset")).click();
+    browser.sleep(1000);
+    element(by.id("menuUser")).click();
+    element(by.id("menuUserLogout")).click();
 
     browser.sleep(1000);
   });
